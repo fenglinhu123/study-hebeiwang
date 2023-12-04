@@ -1,0 +1,38 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: gateway-service
+  main:
+    allow-bean-definition-overriding: true
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: oauth2-service-routes
+          uri: lb://oauth2-service
+          predicates:
+            - Path=/**
+          filters:
+            - StripPrefix=1
+        - id: user-service-routes
+          uri: lb://user-service
+          predicates:
+            - Path=/**
+          filters:
+            - StripPrefix=1
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/oauth?serverTimezone=Asia/Shanghai&useSSL=false
+#    username: root
+#    password: root

@@ -1,0 +1,31 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: user-service
+  main:
+    allow-bean-definition-overriding: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/oauth?serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: root
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 10s
+    lettuce:
+      pool:
+        max-active: 50
+        max-idle: 50
+        max-wait: -1ms
+        min-idle: 0
+third-party:
+  gitee:
+    client-id: f2379fdb7bc1bdb1c471311d25dc1dd32d899a088881e945b91771964e8926f9
+    client-secret: aab734f037ee9bc786ec8e317e2ddaf3d1a0aa69e63f1f22b36a1ae0c4284c78
+    call-back: http://localhost:9091/user/register/gitee
+    token-url: https://gitee.com/oauth/token?grant_type=authorization_code&client_id=%s&client_secret=%s&redirect_uri=%s&code=%s
+    user-url: https://gitee.com/api/v5/user?access_token=%s
+    state: GITEE

@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Mon Oct 23 11:37:48 CST 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-018b-5a9c-3337-00000c5b6640 
+on database directory memory:F:\IDEAworkspace\code\5bf8b9d4-e0e2-4058-bf40-79dce78221fa with class loader sun.misc.Launcher$ExtClassLoader@4fccd51b 
+Loaded from file:/F:/Java/jdk1.8.0_91/jre/lib/ext/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_91-b14
+user.dir=F:\IDEAworkspace\code
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
